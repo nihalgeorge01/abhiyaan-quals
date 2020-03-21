@@ -1,0 +1,7 @@
+<launch>
+  
+  <node pkg="section_a" name="task2_publisher" type="task2_pub.py"/>
+  <node pkg="section_a" name="task3_subscriber" type="task3_lis.py" output="screen"/>
+
+</launch>
+
