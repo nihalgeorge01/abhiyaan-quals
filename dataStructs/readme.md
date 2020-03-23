@@ -1,3 +1,2 @@
 The Arithmetic Expression Evaluator is in b1_1.cpp. <br> 
-The publisher-subscriber will not compile, a rough solution has been provided. The file b1_2.cpp has my original approach, but due to an issue with incomplete class definition (caused due to the circular definition of Master-Publisher and Master-Subscriber), it will throw errors on compile. <br>
-My second file b1_2_new.cpp has my second approach which tried to bypass these issues. More info in the writeup PDFs.
+The Publisher-Subscriber is in b1_2.cpp
