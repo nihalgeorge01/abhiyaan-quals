@@ -7,6 +7,7 @@ From the given information in the question, we can infer that
 Initially, the path planned would be a straight line from start point to end point, as we don't know where the obstacles are. 
 We can use a sensor, say LIDAR, to get the distances of obstacles from robot.
 Now that we have info about our locality, we can use Dijkstra or A* to navigate around these obstacles. The destination will still be the GPS coords we gave in the beginning. 
+In effect we would be performing Simultaneous Localisation and Mapping.
 I think we can use GPS data to also give feedback to our control system. The path planned by the planner should have waypoints annotated with GPS coordinates, so that we can find the error in position. Velocity can be calculated using delta(GPSvalue)/delta(time). This time should be set by ROS. Then we can get error in velocity.
 
 We can use a simple controller like PID. If we are deviating from the path, the proportional term (which uses position error as calculated above) should send it back towards the path planned.
