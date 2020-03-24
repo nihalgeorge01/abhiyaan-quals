@@ -1,0 +1,14 @@
+From the given information in the question, we can infer that
+
+1. A path has already planned by some path planning algorithm, that took a GPS coordinate to the goal position, and sensor data (for local obstacles).
+2. Though the path has been planned, the robot does not follow the path exactly due to various reasons, say, motor speed does not match the command sent to it, or the turn angle is not matching with what was sent by the planner.
+3. SOme obstacles also come in the way, which means its planned path changes nearly at every point in time.
+
+Initially, the path planned would be a straight line from start point to end point, as we don't know where the obstacles are. 
+We can use a sensor, say LIDAR, to get the distances of obstacles from robot.
+Now that we have info about our locality, we can use Dijkstra or A* to navigate around these obstacles. The destination will still be the GPS coords we gave in the beginning. 
+I think we can use GPS data to also give feedback to our control system. The path planned by the planner should have waypoints annotated with GPS coordinates, so that we can find the error in position. Velocity can be calculated using delta(GPSvalue)/delta(time). This time should be set by ROS. Then we can get error in velocity.
+
+We can use a simple controller like PID. If we are deviating from the path, the proportional term (which uses position error as calculated above) should send it back towards the path planned.
+ 
+
