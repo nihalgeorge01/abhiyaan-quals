@@ -9,6 +9,7 @@ EE19B131
 
 <b>Previous Experience:</b><br>
 AutoNav miniproject - Team Anveshak https://github.com/nihalgeorge01/turtle_2dnav
+Implemented autonomous navigation with obstacle avoidance, the PoC was on turtlesim.
 
 <b>Current PORs:</b><br>
 Being a freshie
